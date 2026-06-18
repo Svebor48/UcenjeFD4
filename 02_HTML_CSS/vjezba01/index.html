@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="hr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Moderna i Čista Stranica</title>
+    <style>
+        /* CSS VARIJABLE - Ovdje lako mijenjaš boje */
+        :root {
+            --primarna: #4f46e5;
+            --primarna-tamna: #4338ca;
+            --pozadina: #f8fafc;
+            --tekst-glavni: #0f172a;
+            --tekst-sekundarni: #475569;
+            --kartica-bg: #ffffff;
+        }
+
+        /* Osnovni reset i font */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: var(--pozadina);
+            color: var(--tekst-glavni);
+            line-height: 1.6;
+        }
+
+        /* Navigacija */
+        nav {
+            background-color: var(--kartica-bg);
+            padding: 1.2rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .logo {
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: var(--primarna);
+        }
+
+        .nav-links {
+            list-style: none;
+            display: flex;
+            gap: 1.5rem;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--tekst-sekundarni);
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--primarna);
+        }
+
+        /* Hero sekcija */
+        .hero {
+            max-width: 1200px;
+            margin: 4rem auto;
+            padding: 0 2rem;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            font-weight: 800;
+            margin-bottom: 1rem;
+            line-height: 1.2;
+        }
+
+        .hero p {
+            font-size: 1.25rem;
+            color: var(--tekst-sekundarni);
+            max-width: 600px;
+            margin: 0 auto 2rem auto;
+        }
+
+        /* Gumbi */
+        .btn {
+            display: inline-block;
+            background-color: var(--primarna);
+            color: white;
+            padding: 0.75rem 1.5rem;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: background 0.3s, transform 0.2s;
+            box-shadow: 0 4px 6px -1px rgba(79, 70, 229, 0.2);
+        }
+
+        .btn:hover {
+            background-color: var(--primarna-tamna);
+            transform: translateY(-2px);
+        }
+
+        /* Sekcija s karticama (Grid) */
+        .features {
+            max-width: 1200px;
+            margin: 2rem auto 6rem auto;
+            padding: 0 2rem;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .card {
+            background-color: var(--kartica-bg);
+            padding: 2.5rem;
+            border-radius: 16px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+        }
+
+        .card-icon {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            display: inline-block;
+        }
+
+        .card h3 {
+            font-size: 1.3rem;
+            margin-bottom: 0.75rem;
+        }
+
+        .card p {
+            color: var(--tekst-sekundarni);
+        }
+
+        /* Podnožje (Footer) */
+        footer {
+            background-color: var(--kartica-bg);
+            text-align: center;
+            padding: 2rem;
+            color: var(--tekst-sekundarni);
+            border-top: 1px solid #e2e8f0;
+            font-size: 0.9rem;
+        }
+
+        /* Prilagodba za mobitele */
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 2.2rem; }
+            .nav-links { display: none; } /* Jednostavnosti radi, skrivamo na mobitelu */
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <div class="logo">MojBrand</div>
+        <ul class="nav-links">
+            <li><a href="#">Početna</a></li>
+            <li><a href="#">O nama</a></li>
+            <li><a href="#">Usluge</a></li>
+            <li><a href="#">Kontakt</a></li>
+        </ul>
+    </nav>
+
+    <section class="hero">
+        <h1>Kreiraj nešto predivno</h1>
+        <p>Ovo je primjer modernog dizajna koji koristi čiste linije, ugodne fontove i pametan razmak kako bi tvoj sadržaj došao do izražaja.</p>
+        <a href="#" class="btn">Započni besplatno</a>
+    </section>
+
+    <section class="features">
+        <div class="card">
+            <span class="card-icon">⚡</span>
+            <h3>Brzo i responzivno</h3>
+            <p>Stranica se učitava u trenu i savršeno se prilagođava svim veličinama ekrana – od mobitela do desktopa.</p>
+        </div>
+
+        <div class="card">
+            <span class="card-icon">🎨</span>
+            <h3>Moderan dizajn</h3>
+            <p>Pažljivo odabrane boje, blage sjene i zaobljeni rubovi pružaju osjećaj profesionalnosti i estetike.</p>
+        </div>
+
+        <div class="card">
+            <span class="card-icon">⚙️</span>
+            <h3>Jednostavno za urediti</h3>
+            <p>Kod je čist i strukturiran pomoću CSS varijabli, tako da boje i fontove možeš promijeniti u nekoliko sekundi.</p>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2026 MojBrand. Sva prava pridržana.</p>
+    </footer>
+
+</body>
+</html>

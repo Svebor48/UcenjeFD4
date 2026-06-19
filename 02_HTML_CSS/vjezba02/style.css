@@ -1,0 +1,42 @@
+:root{
+    --pozadina: #ecf0f1;
+    --primarna-boja: #2c3e50;
+    --pozadina-container: #f5f2f2; 
+}
+
+body{
+    background-color: var(--pozadina);
+}
+
+.container{
+    width: 90%;
+    /* border: 1px solid black; */
+    margin: auto;
+    outline-style: solid;
+    outline-width: 2px;
+    /* outline-offset: 10px; */
+    outline-color: var(--primarna-boja);
+
+    /* padding-top: 1rem;
+    padding-right: 1rem;
+    padding-bottom: 1rem;
+    padding-left: 1rem; */
+
+    padding: 1rem;
+
+    /* padding: 1rem 2rem 3rem 4rem; */
+    background-color: var(--pozadina-container);
+}
+
+
+h1{
+    text-align: center;
+    font-family: monospace;
+}
+
+#lista{
+    border: 2px dashed black;
+    border-radius: 0.5rem;
+    padding: 2rem;
+    margin: 2rem;
+}

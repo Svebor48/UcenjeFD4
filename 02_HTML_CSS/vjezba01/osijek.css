@@ -1,0 +1,36 @@
+body{
+    background-color: antiquewhite;
+}
+
+h1{
+   color: #ff00ff;
+   text-align: center;
+   font-family: sans-serif;
+}
+
+h2{
+    color: blue;
+}
+
+
+.naslov{
+    color: green;
+}
+
+
+div p{
+    color: pink;
+}
+
+#sadrzaj{
+    font-family: sans-serif;
+}
+
+
+ul{
+    list-style: none;
+}
+
+ul li::before{
+    content: '✂️';
+}

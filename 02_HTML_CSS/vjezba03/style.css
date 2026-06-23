@@ -1,0 +1,63 @@
+body{
+    background-color: antiquewhite;
+}
+
+ul{
+    display: flex;
+    list-style-type: none;
+    justify-content: center;
+}
+
+ul li{
+    /* border: 2px solid blue; */
+    /* margin: 2rem; */
+    padding: 1rem;
+}
+
+ul li a{
+    text-decoration: none;
+    color: black;
+    font-size: 1.5rem;
+    font-family: sans-serif;
+}
+
+ul li a:hover{
+    color: brown;
+    /* font-size: 1.6rem; */
+}
+
+li.active{
+    background-color: bisque;
+}
+
+
+main{
+    display: grid;
+    grid-template-areas: 
+    ". a a b"
+    "c d d b"
+    "e e e b"
+    ;
+    row-gap: 2rem;
+    column-gap: 2rem;
+}
+
+.a{grid-area: a;}
+.b{grid-area: b;}
+.c{grid-area: c;}
+.d{grid-area: d;}
+.e{grid-area: e;}
+
+
+div{
+    background-color: aliceblue;
+    font-size: 4rem;
+    border: 4px dotted red;
+    border-radius: 2rem;
+    padding: 2rem;
+}
+
+div.d{
+    background-color: black;
+    color: white;
+}

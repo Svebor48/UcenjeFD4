@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sigurna Prijava</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="lokot">🔒</div>
+
+    <form>
+        <h2>Sigurna Prijava</h2>
+        
+        <label>Korisničko ime</label>
+        <input type="text" value="admin">
+        
+        <label>Lozinka</label>
+        <input type="password" value="******">
+        
+        <div class="redak-checkbox">
+            <input type="checkbox" id="zapamti">
+            <label for="zapamti">Zapamti uređaj</label>
+        </div>
+        
+        <button type="submit">Prijavi se</button>
+    </form>
+
+    <h3>Nedavne aktivnosti prijave</h3>
+    
+    <table>
+        <tr>
+            <th>IP ADRESA</th>
+            <th>VRIJEME</th>
+            <th>STATUS</th>
+        </tr>
+        <tr>
+            <td>192.168.1.15</td>
+            <td>12:45</td>
+            <td class="uspjeh">Uspjeh</td>
+        </tr>
+        <tr>
+            <td>10.0.0.52</td>
+            <td>Jučer</td>
+            <td class="greska">Greška</td>
+        </tr>
+        <tr>
+            <td>88.102.x.x</td>
+            <td>01.12.</td>
+            <td></td>
+        </tr>
+    </table>
+
+    <p class="tekst-dno">Prikaz zadnja 3 pokušaja</p>
+
+</body>
+</html>

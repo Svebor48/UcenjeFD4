@@ -1,0 +1,125 @@
+body{
+    background-color: #f4f7f6; 
+    font-family: Arial, sans-serif; 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 40px;
+    margin: 0;
+}
+
+.lokot{
+    font-size: 50px;
+    color: white;
+    width: 80px;
+    height: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 12px;
+    margin-bottom: 20px;
+}
+
+
+form{
+    background-color: white;
+    width: 400px;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05); 
+    box-sizing: border-box;
+}
+
+
+form h2{
+    font-size: 18px;
+    color: #333;
+    margin-top: 0;
+    margin-bottom: 25px;
+    border-bottom: 1px solid #eee; 
+    padding-bottom: 10px;
+}
+
+form label{
+    display: block;
+    font-size: 14px;
+    color: #555;
+    margin-bottom: 8px;
+    margin-top: 15px;
+}
+
+form input[type="text"], 
+form input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    font-size: 14px;
+    color: #555;
+}
+
+
+.redak-checkbox{
+    display: flex;
+    align-items: center;
+    margin: 20px 0;
+}
+
+.redak-checkbox label{
+    margin: 0 0 0 8px; 
+    cursor: pointer;
+}
+
+form button{
+    width: 100%;
+    background-color: #3b66de;
+    color: white;
+    border: none;
+    padding: 12px;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+h3{
+    width: 400px;
+    font-size: 16px;
+    color: #444;
+    margin-top: 40px;
+    margin-bottom: 15px;
+    text-align: left;
+}
+
+table{
+    width: 400px;
+    background-color: white;
+    border-collapse: collapse; 
+}
+
+th, td{
+    padding: 12px;
+    text-align: left;
+    font-size: 14px;
+    border-bottom: 1px solid #eee;
+}
+
+th{
+    color: #000;
+    font-weight: bold;
+}
+
+.uspjeh{
+    color: #28a745; 
+}
+
+.greska{
+    color: #dc3545; 
+}
+
+.tekst-dno{
+    font-size: 12px;
+    color: #888;
+    margin-top: 10px;
+}

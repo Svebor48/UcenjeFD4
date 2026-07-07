@@ -1,0 +1,14 @@
+.brand .logo {
+    border-radius: 20px;
+    background-color: #f0f;
+}
+
+.section-tag .pip {
+    background: #f0f;
+}
+
+div.s-cover-meta a{
+    text-decoration: none;
+    font-family: var(--font-mono);
+    color: var(--ink-3);
+}

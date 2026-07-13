@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="hr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FPV Akademija - Kurikulum</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+</head>
+
+<body class="d-flex flex-column min-vh-100">
+
+    <nav class="navbar bg-body-tertiary fixed-top">
+        <div class="container-fluid">
+            <a class="navbar-brand fw-bold" href="index.html">FPV Akademija</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar"
+                aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar"
+                aria-labelledby="offcanvasNavbarLabel">
+                <div class="offcanvas-header">
+                    <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Navigacija</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                </div>
+                <div class="offcanvas-body">
+                    <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+                        <li class="nav-item">
+                            <a class="nav-link" href="index.html">Početna</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="program.html">Kurikulum</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="kontakt.html">Prijava / Kontakt</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container mt-5 pt-4">
+    </div>
+
+    <main class="container my-5">
+
+        <h1 class="text-center fw-bold mb-5">Program i oprema</h1>
+        <div class="accordion accordion-flush shadow-sm rounded-3 p-3 bg-white mb-5" id="accordionFlushExample">
+
+            <div class="accordion-item">
+                <h2 class="accordion-header">
+                    <button class="accordion-button collapsed fw-bold" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
+                        Modul 1: Uvod u FPV i zakonska regulativa
+                    </button>
+                </h2>
+                <div id="flush-collapseOne" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+                    <div class="accordion-body text-muted">
+                        U prvom modulu prolazimo kroz osnove aerodinamike, komponente FPV sustava (dron, stanica,
+                        naočale) te detaljno proučavamo zakone i pravilnike o letenju bespilotnim letjelicama u
+                        Republici Hrvatskoj i EU.
+                    </div>
+                </div>
+            </div>
+
+            <div class="accordion-item">
+                <h2 class="accordion-header">
+                    <button class="accordion-button collapsed fw-bold" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseTwo">
+                        Modul 2: Inženjerstvo i sastavljanje drona
+                    </button>
+                </h2>
+                <div id="flush-collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+                    <div class="accordion-body text-muted">
+                        Praktični dio počinje ovdje! Naučit ćeš čitati elektroničke sheme, pravilno lemiti komponente na
+                        matičnu ploču (FC), konfigurirati ESC-ove te povezati video odašiljač i kameru za savršen
+                        signal.
+                    </div>
+                </div>
+            </div>
+
+            <div class="accordion-item">
+                <h2 class="accordion-header">
+                    <button class="accordion-button collapsed fw-bold" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#flush-collapseThree" aria-expanded="false" aria-controls="flush-collapseThree">
+                        Modul 3: Simulator i stvarni letovi
+                    </button>
+                </h2>
+                <div id="flush-collapseThree" class="accordion-collapse collapse"
+                    data-bs-parent="#accordionFlushExample">
+                    <div class="accordion-body text-muted">
+                        Prije pravog polijetanja, sate provodimo na naprednim FPV simulatorima. Nakon savladavanja
+                        osnova na računalu, izlazimo na teren gdje uz pratnju mentora letiš pravi FPV dron u Acro modu i
+                        učiš napredne manevre.
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <div class="my-5 text-start" style="max-width: 600px; margin: 0 auto;">
+            <h3 class="fw-bold mb-3 text-center">Potrebna oprema za polaznike</h3>
+            <p class="text-muted text-center mb-4">Svu navedenu opremu osigurava akademija tijekom trajanja edukacije:
+            </p>
+
+            <ul class="list-group shadow-sm">
+                <li class="list-group-item"><strong>FPV Daljinski upravljač (Radiokontroler)</strong> - ELRS protokol
+                </li>
+                <li class="list-group-item"><strong>FPV Video naočale (Goggles)</strong> - Digitalni ili analogni sustav
+                </li>
+                <li class="list-group-item"><strong>5-inčni utrkujući/freestyle dron</strong> - Sastavljen od strane
+                    polaznika</li>
+                <li class="list-group-item"><strong>LiPo baterije i punjač</strong> - Sigurno upravljanje i punjenje
+                </li>
+                <li class="list-group-item"><strong>Računalo s FPV simulatorom</strong> - Za vježbu u zatvorenom
+                    prostoru</li>
+            </ul>
+        </div>
+
+        <div class="my-5 text-center">
+            <h3 class="fw-bold mb-3">Upoznaj svog instruktora</h3>
+            <p class="text-muted mb-4">Klikni na gumb ispod i saznaj tko će te voditi kroz FPV avanturu.</p>
+
+            <button type="button" class="btn btn-outline-primary btn-lg" data-bs-toggle="modal"
+                data-bs-target="#instructorModal">
+                👨‍✈️ Pogledaj profil predavača
+            </button>
+        </div>
+
+        <div class="modal fade" id="instructorModal" tabindex="-1" aria-labelledby="instructorModalLabel"
+            aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+
+                    <div class="modal-header">
+                        <h5 class="modal-title fw-bold" id="instructorModalLabel">Glavni instruktor akademije</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Zatvori"></button>
+                    </div>
+
+                    <div class="modal-body text-start">
+                        <h4 class="fw-bold text-primary">Ivan Horvat</h4>
+                        <p class="text-muted"><em>Profesionalni FPV pilot i STEM inženjer</em></p>
+                        <hr>
+                        <p>Ivan ima više od 7 godina iskustva u sklapanju i pilotiranju custom bespilotnih letjelica.
+                            Specijaliziran je za komercijalna snimanja iz zraka u filmskoj industriji i aktivni je
+                            natjecatelj u europskim utrkama dronova.</p>
+                        <p class="mb-0"><strong>Moto:</strong> "Simulator je tvoj najbolji prijatelj, a lemljenje je
+                            pola posla!"</p>
+                    </div>
+
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Zatvori</button>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <div class="sticky-bottom">
+        &copy; 2026 FPV Akademija
+    </div>
+
+
+
+    <script src="js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>

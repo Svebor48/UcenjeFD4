@@ -1,0 +1,359 @@
+/* ==========================================
+   1. OSNOVNI RESET I RASPODJELA (FLEXBOX)
+   ========================================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #ffffff;
+    color: #1a1a1a;
+    font-family: 'Oswald', sans-serif; /* Sportski, čitljiv font za običan tekst */
+    line-height: 1.6;
+    
+    /* Ova tri pravila drže footer na dnu stranice */
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* Srednji dio stranice koji se širi i gura footer prema dolje */
+main {
+    flex: 1;
+}
+
+/* ==========================================
+   2. GORNJI IZBORNIK (HEADER)
+   ========================================== */
+header {
+    background-color: #1a1a1a; /* Crna pozadina */
+    color: #ffffff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 10%; /* Smanjen padding za bolji izgled sa slikom */
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    border-bottom: 5px solid #F7E967; /* Žuta traka s logotipa */
+}
+
+/* Kontejner za logo */
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+/* Slika logotipa */
+.logo-img {
+    height: auto;
+    max-height: 80px; /* Ograničava visinu da ne bude prevelik u headeru */
+    width: auto;
+    display: block;
+    object-fit: contain;
+}
+
+/* Navigacijski linkovi */
+nav ul {
+    list-style: none;
+    display: flex;
+}
+
+nav ul li {
+    margin-left: 25px;
+}
+
+nav ul li a {
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 18px;
+    text-transform: uppercase;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+nav ul li a:hover, nav ul li a.active {
+    color: #F7E967; /* Kada prijeđeš mišem ili kad je stranica aktivna */
+}
+
+/* ==========================================
+   3. HERO SEKCIJA (POČETNA STRANICA)
+   ========================================== */
+
+   .hero {
+    /* 1. Mijenjamo u "contain" da se slika nikad ne reže, i stavljamo crnu pozadinu iza nje */
+    background: linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.65)), 
+                url('images/pozadina.png') no-repeat center center/contain, #1a1a1a;
+    
+    /* 2. Prilagođavamo visinu tako da slika i tekst imaju dovoljno mjesta */
+    min-height: calc(100vh - 105px - 72px); 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: #ffffff;
+    padding: 60px 20px;
+}
+
+.hero-content h2 {
+    font-family: 'Graduate', serif; /* Kockasti font */
+    font-size: 50px;
+    margin-bottom: 15px;
+    letter-spacing: 2px;
+    color: #F7E967; /* Žuti naslov */
+}
+
+.hero-content p {
+    font-size: 22px;
+    margin-bottom: 30px;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+    color: #e0e0e0;
+}
+
+/* Glavni gumb (Dizajniran u stilu logotipa) */
+.btn {
+    display: inline-block;
+    background-color: #F7E967;
+    color: #1a1a1a;
+    padding: 12px 35px;
+    text-decoration: none;
+    font-family: 'Graduate', serif;
+    font-size: 18px;
+    font-weight: bold;
+    border-radius: 0px; /* Oštri rubovi */
+    border: 3px solid #1a1a1a;
+    transition: all 0.3s ease;
+}
+
+.btn:hover {
+    background-color: #ffffff;
+    transform: scale(1.05); /* Lagano se poveća kad prođeš mišem */
+}
+
+/* ==========================================
+   4. SEKCIJA CJENIKA
+   ========================================== */
+.pricing-section {
+    padding: 60px 10%;
+    background-color: #1a1a1a; /* Tamna pozadina sekcije da žute kartice iskaču */
+}
+
+.section-title {
+    font-family: 'Graduate', serif;
+    font-size: 36px;
+    color: #F7E967; /* Žuti naslov sekcije */
+    text-align: center;
+    margin-bottom: 40px;
+    letter-spacing: 2px;
+}
+
+/* Kontejner za kartice cjenika */
+/* Kontejner za kartice cjenika - sada s prisilnim poravnanjem visine */
+.pricing-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    align-items: stretch; /* Ovo prisiljava sve kartice u istom redu da budu jednako visoke! */
+}
+
+/* Izgled svake pojedine kartice cjenika */
+.pricing-card {
+    background-color: #F7E967; /* Žuta pozadina */
+    color: #1a1a1a;
+    padding: 25px;
+    border: 4px solid #ffffff;
+    border-radius: 0px;
+    box-shadow: 8px 8px 0px #000000;
+    
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+
+    /* Ovo pravilo garantira da će SVAKA kartica biti visoka barem 650px.
+       Tako će i one s manje teksta biti jednako velike kao i najduža kartica! */
+    min-height: 650px; 
+}
+    
+    /* Ova tri pravila omogućuju da unutrašnjost kartice pravilno diše */
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+/* Naslov kategorije unutar kartice (npr. KOTAČI, KOČNICE...) */
+.pricing-card h3 {
+    font-family: 'Graduate', serif;
+    font-size: 22px;
+    border-bottom: 3px solid #1a1a1a;
+    padding-bottom: 10px;
+    margin-bottom: 15px;
+    letter-spacing: 1px;
+}
+
+/* Popis usluga */
+.pricing-card ul {
+    list-style: none;
+}
+
+.pricing-card ul li {
+    display: flex;
+    justify-content: space-between; /* Naziv usluge lijevo, cijena desno */
+    align-items: flex-start;
+    padding: 8px 0;
+    border-bottom: 1px dashed rgba(26, 26, 26, 0.3); /* Crtkana linija između usluga */
+    font-size: 15px;
+}
+
+.pricing-card ul li:last-child {
+    border-bottom: none; /* Uklanja liniju sa zadnje usluge */
+}
+
+/* Naziv usluge */
+.pricing-card ul li span {
+    font-weight: 500;
+    padding-right: 15px;
+}
+
+/* Cijena */
+.pricing-card ul li strong {
+    font-family: 'Graduate', serif;
+    font-size: 16px;
+    white-space: nowrap; /* Sprečava prelamanje cijene u novi red */
+}
+
+/* ==========================================
+   5. SEKCIJA KONTAKTA
+   ========================================== */
+.contact-section {
+    padding: 60px 10%;
+    background-color: #ffffff; /* Svijetla pozadina za kontrast s tamnim cjenikom */
+    color: #1a1a1a;
+}
+
+.contact-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 40px;
+    margin-top: 30px;
+}
+
+/* Informacije (Lijeva strana) */
+.contact-info {
+    flex: 1;
+    min-width: 280px;
+    background-color: #F7E967; /* Prepoznatljiva žuta */
+    padding: 30px;
+    border: 4px solid #1a1a1a;
+    box-shadow: 8px 8px 0px #1a1a1a; /* Oštra crna sjena */
+}
+
+.contact-info h3 {
+    font-family: 'Graduate', serif;
+    font-size: 24px;
+    margin-bottom: 5px;
+    border-bottom: 3px solid #1a1a1a;
+    padding-bottom: 10px;
+}
+
+.contact-info .owner {
+    font-size: 18px;
+    margin-bottom: 20px;
+}
+
+.info-item {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 20px;
+}
+
+.info-item:last-child {
+    margin-bottom: 0;
+}
+
+.info-item .icon {
+    font-size: 24px;
+    margin-right: 15px;
+    line-height: 1;
+}
+
+.info-item p {
+    font-size: 16px;
+}
+
+.info-item a {
+    color: #1a1a1a;
+    text-decoration: none;
+    font-weight: bold;
+    border-bottom: 2px solid transparent;
+    transition: border-color 0.2s;
+}
+
+.info-item a:hover {
+    border-bottom: 2px solid #1a1a1a;
+}
+
+/* Google Karta (Desna strana) */
+.contact-map {
+    flex: 1.2;
+    min-width: 300px;
+    border: 4px solid #1a1a1a;
+    box-shadow: 8px 8px 0px #F7E967; /* Kontrastna žuta sjena */
+    background-color: #1a1a1a;
+    overflow: hidden;
+}
+
+.contact-map iframe {
+    display: block;
+    height: 100%;
+    min-height: 300px;
+}
+
+/* ==========================================
+   6. PODNOŽJE (FOOTER) & RESPONSIVE
+   ========================================== */
+footer {
+    background-color: #1a1a1a;
+    color: #ffffff;
+    text-align: center;
+    padding: 25px;
+    font-size: 15px;
+    border-top: 5px solid #F7E967;
+    width: 100%;
+}
+
+/* Prilagodba za mobitele */
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        padding: 15px 20px;
+    }
+    
+    nav ul {
+        margin-top: 15px;
+    }
+    
+    nav ul li {
+        margin-left: 15px;
+        margin-right: 15px;
+    }
+    
+    .contact-container {
+        flex-direction: column;
+    }
+    
+    .contact-map {
+        height: 300px;
+    }
+    
+    .hero-content h2 {
+        font-size: 32px;
+    }
+    
+    .hero-content p {
+        font-size: 18px;
+    }
+}

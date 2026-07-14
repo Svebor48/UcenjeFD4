@@ -1,0 +1,350 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif
+}
+body{
+    background-color:  #111111;
+    color: #ffffff;
+}
+
+.zaglavlje{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 10%;
+    background-color: #111111;
+}
+
+.logo{
+    font-weight: 900;
+    font-size: 20px;
+    letter-spacing: 1px;
+    color: #bfff00;
+}
+
+.logo span{
+    color: #ffffff;
+}
+
+.izbornik a{
+    color: #ffffff;
+    text-decoration: none;
+    margin-left: 20px;
+    font-size: 14px;
+    transition: 0,3s;
+}
+
+.izbornik a:hover{
+    color: #bfff00; 
+}
+
+.hero-sekcija{
+    background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('slike/pozadina.jpg');
+    background-size: cover;
+    background-position: center;
+    height: 80vh; 
+    display: flex;
+    justify-content: center; 
+    align-items: center;     
+    text-align: center;     
+    padding: 0 20px;
+}
+
+.hero-sekcija h1{
+    font-size: 40px;
+    font-weight: bold;
+    letter-spacing: 2px;
+    margin-bottom: 40px;
+}
+
+.hero-sekcija p{
+    font-size: 16px;
+    color: #cccccc;
+    margin-bottom: 60px;
+    line-height: 1.6;
+}
+
+.gumb{
+    display: inline-block;
+    background-color: #bfff00;
+    color: #111111;            
+    padding: 15px 40px;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 15px;
+    border-radius: 25px; 
+    transition: 0.3s;
+}
+
+.gumb:hover{
+    background-color: #a2d800; 
+    transform: scale(1.05);    
+}
+
+/* 4. Sekcija "Što nudimo" */
+.usluge-sekcija {
+    padding: 60px 10%;
+    text-align: center;
+}
+
+/* Stil za naslov sekcije */
+.sekcija-naslov {
+    font-size: 28px;
+    font-weight: bold;
+    color: #bfff00; /* Neonsko zelena */
+    margin-bottom: 40px;
+    position: relative;
+    display: inline-block;
+}
+
+/* Kratka siva/zelena crta ispod naslova */
+.sekcija-naslov::after {
+    content: '';
+    display: block;
+    width: 50px;
+    height: 3px;
+    background-color: #ffffff;
+    margin: 10px auto 0 auto;
+}
+
+.kartice-kontejner{
+    display: flex;
+    justify-content: space-between;
+    gap: 20px; 
+    flex-wrap: wrap; 
+}
+
+.kartica{
+    background-color: #1a1a1a;
+    padding: 30px 20px;
+    border-radius: 8px;
+    flex: 1; 
+    min-width: 250px; 
+    transition: 0.3s;
+}
+
+.kartica:hover{
+    transform: translateY(-5px); 
+    box-shadow: 0 10px 20px rgba(191, 255, 0, 0.1); 
+}
+
+.kartica h3{
+    font-size: 18px;
+    margin-bottom: 15px;
+    color: #ffffff;
+}
+
+.kartica p{
+    font-size: 14px;
+    color: #aaaaaa;
+    line-height: 1.6;
+}
+
+.cijene-sekcija{
+    padding: 60px 10%;
+    text-align: center;
+    background-color: #111111;
+}
+
+.napomena{
+    font-size: 13px;
+    color: #888888;
+    margin-bottom: 20px;
+    font-style: italic;
+}
+
+.tablica-kontejner{
+    overflow-x: auto;
+    margin-top: 20px;
+}
+
+.tablica-cijena{
+    width: 100%;
+    max-width: 800px; 
+    margin: 0 auto;   
+    border-collapse: collapse; 
+    background-color: #1a1a1a;
+    border-radius: 8px;
+    overflow: hidden; 
+}
+
+.tablica-cijena thead{
+    background-color: #bfff00; 
+}
+
+.tablica-cijena th{
+    color: #111111; 
+    font-weight: bold;
+    font-size: 14px;
+    padding: 15px;
+    text-align: center;
+}
+
+.tablica-cijena td{
+    padding: 18px 15px;
+    border-bottom: 1px solid #2a2a2a; 
+    font-size: 14px;
+    color: #dddddd;
+    text-align: center;
+}
+
+.tablica-cijena td.usluga-naziv{
+    text-align: left;
+    font-weight: bold;
+}
+
+.tablica-cijena td.usluga-naziv span{
+    font-size: 12px;
+    font-weight: normal;
+    color: #888888;
+}
+
+.tablica-cijena td.cijena-celija{
+    font-weight: bold;
+    color: #ffffff;
+}
+
+.tablica-cijena tbody tr:hover{
+    background-color: #222222; 
+}
+
+.video-sekcija{
+    padding: 60px 10%;
+    display: flex;
+    justify-content: center; 
+    background-color: #111111;
+}
+
+.video-kontejner{
+    position: relative;
+    width: 100%;
+    max-width: 800px; 
+    padding-bottom: 56.25%; 
+    height: 0;
+    overflow: hidden;
+    border-radius: 10px; 
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5); 
+}
+
+.video-kontejner iframe{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.kontakt-sekcija{
+    padding: 60px 10%;
+    background-color: #111111;
+    text-align: center;
+}
+
+.kontakt-kontejner{
+    display: flex;
+    justify-content: space-between;
+    gap: 50px;
+    text-align: left;
+    margin-top: 40px;
+    flex-wrap: wrap; 
+}
+
+.kontakt-info{
+    flex: 1;
+    min-width: 280px;
+}
+
+.kontakt-info h3{
+    font-size: 22px;
+    margin-bottom: 20px;
+    color: #ffffff;
+}
+
+.kontakt-info p{
+    font-size: 15px;
+    color: #aaaaaa;
+    line-height: 1.8;
+    margin-bottom: 25px;
+}
+
+.kontakt-info a{
+    color: #bfff00;
+    text-decoration: none;
+}
+
+.kontakt-forma{
+    flex: 1.2;
+    min-width: 300px;
+    background-color: #1a1a1a; 
+    padding: 30px;
+    border-radius: 8px;
+}
+
+.forma-grupa{
+    margin-bottom: 20px;
+}
+
+.forma-grupa label{
+    display: block;
+    font-size: 13px;
+    color: #888888;
+    margin-bottom: 8px;
+}
+
+.forma-grupa input,
+.forma-grupa select,
+.forma-grupa textarea{
+    width: 100%;
+    padding: 12px;
+    background-color: #2a2a2a; 
+    border: 1px solid #333333;
+    border-radius: 5px;
+    color: #ffffff;
+    font-size: 14px;
+    outline: none;
+    transition: 0.3s;
+}
+
+.forma-grupa input:focus,
+.forma-grupa select:focus,
+.forma-grupa textarea:focus{
+    border-color: #bfff00; 
+}
+
+.gumb-posalji{
+    width: 100%;
+    background-color: #bfff00;
+    color: #111111;
+    border: none;
+    padding: 14px;
+    font-size: 14px;
+    font-weight: bold;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.gumb-posalji:hover{
+    background-color: #a2d800;
+    transform: translateY(-2px);
+}
+
+.podnozje{
+    background-color: #0a0a0a;
+    padding: 30px 10%;
+    text-align: center;
+    border-top: 1px solid #1a1a1a;
+}
+
+.podnozje p{
+    font-size: 12px;
+    color: #555555;
+    margin-bottom: 5px;
+}
+
+.podnozje .izrada{
+    font-size: 10px;
+    color: #333333;
+}

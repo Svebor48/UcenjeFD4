@@ -357,3 +357,58 @@ footer {
         font-size: 18px;
     }
 }
+/* JEDNOSTAVNA GALERIJA SLIKA */
+.jednostavna-galerija {
+    padding: 60px 20px;
+    background-color: #121212; /* Tamna pozadina */
+    text-align: center;
+}
+
+.galerija-mreza {
+    display: grid;
+    /* Automatski slaže slike u kolone širine minimalno 250px */
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); 
+    gap: 15px; /* Razmak između slika */
+    max-width: 1200px; /* Maksimalna širina cijele galerije */
+    margin: 0 auto;
+}
+
+.galerija-okvir {
+    height: 250px; /* Sve slike će biti točno ove visine */
+    border: 2px solid #333; /* Tamni diskretni rub oko slika */
+    border-radius: 6px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    transition: transform 0.2s ease-in-out; /* Blagi efekt kad se prijeđe mišem */
+}
+
+/* Efekt kad netko prijeđe mišem preko slike (malo se poveća) */
+.galerija-okvir:hover {
+    transform: scale(1.03);
+    border-color: #ffcc00; /* Rub požuti u stilu servisa */
+}
+
+.galerija-okvir img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ovo sprečava da se slike rastežu ili izobliče */
+    display: block;
+}
+
+/* Bojanje pozadine kontakt stranice u crno */
+html, body {
+    background-color: #121212 !important;
+}
+
+/* Osiguravamo da glavni kontejner koji drži karticu i kartu nema bijelu pozadinu */
+.contact-section, 
+main {
+    background-color: #121212 !important;
+    background: #121212 !important;
+}
+
+/* Čuvamo žutu boju za glavni naslov "KONTAKTIRAJ NAS" */
+.contact-section h2, 
+.contact-section .section-title {
+    color: #F7E967; !important;
+}

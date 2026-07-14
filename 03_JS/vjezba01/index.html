@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS Hello world</title>
+</head>
+<body>
+
+
+    <p id="ispis">
+        
+    </p>
+
+    <p id="ge"></p>
+
+    <button onclick="alert('Hello world 8')">
+        Klikni me
+    </button>
+
+    <div
+    onmouseover="this.style.backgroundColor='red'"
+    onmouseleave="this.style.backgroundColor='white'"
+    >
+        Edunova
+    </div>
+
+    <input type="password" name="" id="lozinka">
+    <button onclick="document.getElementById('lozinka').type='text'">Prikaži</button>
+
+    <input type="text" name="" id="" 
+    style="font-size: 3rem;"
+    onkeyup="this.value=this.value.toUpperCase()"
+    >
+    
+    <noscript>
+        Vaš preglednik ne podržava javascript
+    </noscript>
+
+
+
+    <script>
+
+        document.write('Hello world 4')
+
+        console.log('Hello world 5')
+
+        //console.logiraj('Hello world 6')
+
+        //console.log 'Hello') 
+
+        console.table({ime:'Pero',prezime:'Perić'})
+
+
+    </script>
+
+    <!-- Učitanje vanjske JS datoteke -->
+     <script src="skripta.js"></script>
+    
+</body>
+</html>

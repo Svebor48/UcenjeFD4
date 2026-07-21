@@ -53,12 +53,18 @@ document.getElementById('izvedi').addEventListener('click', () => {
         } else {
             rezultat.innerHTML = b
         }
+
         rezultat.style.color = 'green'
 
         // završava 1. zadatak
     }
 
+    if(zadatak==='2'){
+        //počinje drugi zadatak
+
+        //završava drugi zadatak
+    }
 
 
-
+    // završava click funkcija
 })

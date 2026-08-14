@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="hr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ljubavni Kalkulator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="card">
+        <h1>Test Ljubavi ❤️</h1>
+        <p class="subtitle">Saznaj koliki je postotak ljubavi između tebe i tvoje simpatije!</p>
+
+        <form id="loveForm">
+            <div class="input-group">
+                <input type="text" id="name1" placeholder="Tvoje ime" required autocomplete="off">
+                <span class="plus">+</span>
+                <input type="text" id="name2" placeholder="Ime simpatije" required autocomplete="off">
+            </div>
+            <button type="submit">Izračunaj Ljubav</button>
+        </form>
+
+        <div id="resultContainer" class="hidden">
+            <h2>Rezultat: <span id="finalPercent"></span>%</h2>
+            <div id="steps" class="steps-box"></div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

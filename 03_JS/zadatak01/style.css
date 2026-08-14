@@ -1,0 +1,122 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+  background-color: #2b2b2b;
+  color: #ffffff;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+.container {
+  display: flex;
+  gap: 40px;
+  align-items: flex-start;
+  max-width: 100%;
+}
+
+.sidebar, .content {
+  display: flex;
+  align-items: flex-start;
+  gap: 15px;
+}
+
+.vertical-title {
+  writing-mode: vertical-rl;
+  transform: rotate(180deg);
+  font-size: 2rem;
+  font-weight: bold;
+  color: #666;
+  letter-spacing: 3px;
+  align-self: center;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  width: 220px;
+}
+
+label {
+  font-size: 0.9rem;
+  color: #ccc;
+}
+
+input, select {
+  background-color: #444;
+  border: 1px solid #666;
+  border-radius: 8px;
+  color: #fff;
+  padding: 12px;
+  font-size: 1.1rem;
+  text-align: center;
+  outline: none;
+}
+
+select {
+  font-size: 0.9rem;
+  text-align: left;
+}
+
+button {
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 15px;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.2s;
+  margin-top: 10px;
+}
+
+button:hover {
+  background-color: #45a049;
+}
+
+
+#matrix-container {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  overflow-x: auto;
+  max-width: 80vw;
+  max-height: 85vh;
+  padding: 10px;
+}
+
+.matrix-row {
+  display: flex;
+  gap: 6px;
+}
+
+.matrix-cell {
+  width: 55px;
+  height: 55px;
+  background-color: #383838;
+  border: 1px solid #666;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  
+  justify-content: flex-end; 
+  padding-right: 12px;
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #fff;
+  font-family: 'Courier New', Courier, monospace; 
+  position: relative;
+}
+
+.matrix-cell.start-cell {
+  background-color: #666; 
+}

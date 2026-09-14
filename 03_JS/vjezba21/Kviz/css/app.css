@@ -1,0 +1,184 @@
+:root {
+    /* Živahna i vesela paleta */
+    --ljubicasta: #21ee66;
+    --roza: #ff4757;
+    --zuta: #ffa502;
+    --zelena: #2ed573;
+    --pozadina: #f3f0ff;
+    --bijela: #ffffff;
+    --tekst: #2f3542;
+    --sjena-3d: 0 8px 0px #5b21b6;
+    --sjena-gumb: 0 6px 0px #e0e0e0;
+}
+
+body {
+    background-color: var(--pozadina);
+    /* Razigrani uzorak točkica i gradijent u pozadini */
+    background-image: 
+        radial-gradient(var(--ljubicasta) 1px, transparent 1px),
+        radial-gradient(var(--roza) 1px, var(--pozadina) 1px);
+    background-size: 40px 40px;
+    background-position: 0 0, 20px 20px;
+    font-family: 'Fredoka', 'Plus Jakarta Sans', system-ui, sans-serif;
+    color: var(--tekst);
+    margin: 0;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+[v-cloak] { display: none; }
+
+/* Lagana ulazna animacija za karticu */
+@keyframes skociUnutra {
+    0% { transform: scale(0.8) translateY(30px); opacity: 0; }
+    100% { transform: scale(1) translateY(0); opacity: 1; }
+}
+
+.spremnik-kviza {
+    width: 100%;
+    max-width: 620px;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.kartica {
+    background: var(--bijela);
+    padding: 2.5rem;
+    border-radius: 32px;
+    border: 4px solid var(--tekst);
+    box-shadow: 0 12px 0px var(--tekst);
+    animation: skociUnutra 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.zaglavlje {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.5rem;
+}
+
+.naslov { 
+    color: var(--ljubicasta); 
+    margin: 0; 
+    font-weight: 800;
+    font-size: 1.8rem;
+    letter-spacing: -0.5px;
+}
+
+.znacka {
+    background: var(--zuta);
+    color: var(--tekst);
+    padding: 8px 18px;
+    border-radius: 50px;
+    font-size: 0.9rem;
+    font-weight: 800;
+    border: 2px solid var(--tekst);
+    box-shadow: 0 3px 0px var(--tekst);
+    transform: rotate(3deg); /* Zaigrani nagib */
+}
+
+/* Progres Bar */
+.progres-okvir {
+    height: 18px;
+    background: #e2e8f0;
+    border-radius: 50px;
+    border: 3px solid var(--tekst);
+    overflow: hidden;
+    margin-bottom: 25px;
+    padding: 2px;
+}
+
+.progres-traka {
+    height: 100%;
+    background: linear-gradient(90deg, var(--roza), var(--zuta));
+    border-radius: 50px;
+    transition: width 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+/* Odgovori */
+.popis-odgovora {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+.gumb-odgovor {
+    padding: 18px 22px;
+    text-align: left;
+    background: var(--bijela);
+    border: 3px solid var(--tekst);
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--tekst);
+    box-shadow: var(--sjena-gumb);
+    transition: all 0.15s ease;
+    position: relative;
+    top: 0;
+}
+
+.gumb-odgovor:hover {
+    background-color: #f4f0ff;
+    border-color: var(--ljubicasta);
+    color: var(--ljubicasta);
+    top: -3px;
+    box-shadow: 0 9px 0px var(--ljubicasta);
+}
+
+/* Osjećaj pravog pritiska tipke */
+.gumb-odgovor:active {
+    top: 3px;
+    box-shadow: 0 3px 0px var(--ljubicasta);
+}
+
+/* Rezultati */
+.tekst-centar { text-align: center; }
+
+@keyframes pulsiranje {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.08); }
+    100% { transform: scale(1); }
+}
+
+.veliki-rezultat {
+    font-size: 5.5rem;
+    font-weight: 900;
+    color: var(--roza);
+    text-shadow: 4px 4px 0px var(--tekst);
+    margin: 10px 0;
+    line-height: 1;
+    display: inline-block;
+    animation: pulsiranje 2s infinite ease-in-out;
+}
+
+.gumb-akcija {
+    width: 100%;
+    padding: 20px;
+    background: var(--zelena);
+    color: var(--tekst);
+    border: 3px solid var(--tekst);
+    border-radius: 20px;
+    font-size: 1.25rem;
+    cursor: pointer;
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    box-shadow: 0 8px 0px var(--tekst);
+    transition: all 0.15s ease;
+    position: relative;
+    top: 0;
+}
+
+.gumb-akcija:hover {
+    background: #26af5f;
+    top: -3px;
+    box-shadow: 0 11px 0px var(--tekst);
+}
+
+.gumb-akcija:active {
+    top: 5px;
+    box-shadow: 0 3px 0px var(--tekst);
+}

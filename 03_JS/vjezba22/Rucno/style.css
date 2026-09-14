@@ -1,0 +1,137 @@
+/* CSS Varijable za jednostavno prilagođavanje boja */
+:root {
+    --bg-color: #0f172a;
+    --glass-bg: rgba(255, 255, 255, 0.03);
+    --glass-border: rgba(255, 255, 255, 0.08);
+    --primary: #8b5cf6;
+    --secondary: #3b82f6;
+    --text-main: #f8fafc;
+}
+
+/* Osnovni reset i font */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--bg-color);
+    /* Moderan tamni background s blagim sjajem u pozadini */
+    background-image:
+        radial-gradient(circle at 15% 50%, rgba(139, 92, 246, 0.15), transparent 25%),
+        radial-gradient(circle at 85% 30%, rgba(59, 130, 246, 0.15), transparent 25%);
+    color: var(--text-main);
+    overflow: hidden;
+}
+
+/* Stilizacija naslova */
+h1 {
+    /* Fluidna tipografija - prilagođava se ekranu */
+    font-size: clamp(2.5rem, 5vw, 4rem);
+    margin-bottom: 3rem;
+    font-weight: 800;
+    letter-spacing: -0.02em;
+    /* Tekst s gradijentom */
+    background: linear-gradient(135deg, #e2e8f0 0%, #94a3b8 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-align: center;
+    animation: fadeInDown 0.8s ease-out;
+}
+
+/* Glassmorphism kontejner za brojač */
+div[x-data="{ count: 0 }"] {
+    background: var(--glass-bg);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid var(--glass-border);
+    padding: 2.5rem 3.5rem;
+    border-radius: 32px;
+    box-shadow:
+        0 4px 24px -1px rgba(0, 0, 0, 0.2),
+        inset 0 1px 0 rgba(255, 255, 255, 0.1);
+    animation: fadeInUp 0.8s ease-out;
+}
+
+div.gumbi {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+}
+
+#broj{
+    text-align: center;
+}
+
+/* Broj unutar brojača */
+span[x-text="count"] {
+    font-size: 3.5rem;
+    font-weight: 700;
+    min-width: 4rem;
+    text-align: center;
+    background: linear-gradient(to right, var(--primary), var(--secondary));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    /* Fiksna širina brojeva kako ne bi poskakivali pri promjeni */
+    font-variant-numeric: tabular-nums;
+}
+
+/* Moderni gumbi */
+button {
+    background: rgba(255, 255, 255, 0.05);
+    color: var(--text-main);
+    border: 1px solid var(--glass-border);
+    padding: 1rem 1.5rem;
+    border-radius: 16px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    overflow: hidden;
+}
+
+/* Hover efekti za gumbe */
+button:hover {
+    background: rgba(255, 255, 255, 0.1);
+    border-color: rgba(255, 255, 255, 0.2);
+    transform: translateY(-2px);
+    box-shadow: 0 10px 20px -10px rgba(139, 92, 246, 0.3);
+}
+
+button:active {
+    transform: translateY(1px);
+}
+
+/* Jednostavne ulazne animacije */
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

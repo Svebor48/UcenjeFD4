@@ -1,10 +1,10 @@
 
 
 
-export default function Home() {
+export default function Home(){
 
 
-    return (
+    return(
         <>
             Ovdje dođe sadržaj na početnoj stranici
         </>

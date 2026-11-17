@@ -1,3 +1,43 @@
+/* body, .card{
+  --bs-bg-opacity: 1;
+  background-color: rgba(var(--bs-tertiary-bg-rgb), var(--bs-bg-opacity)) !important; 
+} */
+
+.granica {
+    border: 1px solid rgb(74, 65, 65);
+  }
+
 .app{
   min-height: 500px;
+}
+
+.desno{
+  text-align: right;
+}
+
+.visinaAkcija{
+  margin-top: 1.7rem;
+}
+
+.statistikaPanel{
+  background: linear-gradient(135deg, #cb72dd 0%, #663a94 100%);
+  transform: translateY(0);
+  transition: transform 0.3s ease;
+}
+
+.statistikaTekst{
+  font-size: 3rem;
+  font-weight: bold;
+  color: white;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+}
+
+@media (max-width: 600px){
+  .slika-polaznik-kontejner{
+    margin-top: 2rem;
+  }
+
+  .polaznici-grupa{
+    margin-top: 1rem;
+  }
 }

@@ -1,79 +1,95 @@
 import { useEffect, useState } from "react"
 import SmjerService from "../../services/smjerovi/SmjerService"
-import { Badge, Table } from "react-bootstrap"
-import { GrValidate } from "react-icons/gr"
-import { FcApproval, FcDisapprove } from "react-icons/fc"
+import { Badge} from "react-bootstrap"
+import { Link, useNavigate } from "react-router-dom"
+import { RouteNames } from "../../constants"
+import useBreakpoint from "../../hooks/useBreakpoint"
+import SmjerPregledTablica from "./SmjerPregledTablica"
+import SmjerPregledGrid from "./SmjerPregledGrid"
+import GrupaService from "../../services/grupe/GrupaService"
 
 
 export default function SmjerPregled() {
 
     const [smjerovi, setSmjerovi] = useState([])
 
-    useEffect(() => {
-        console.log('Došao na pregled smjerova')
-        ucitajSmjerove()
-    }, [])
+    const navigate = useNavigate()
+    const sirina = useBreakpoint();
 
     async function ucitajSmjerove() {
+        // alternativa funkciji obrisi
+        const grupeRezultat = await GrupaService.get();
+
+
         await SmjerService.get().then((odgovor) => {
-            // console.table(odgovor.data)
+           
+            // alternativa funkciji obrisi
+            odgovor.data.forEach(s => {
+                const grupeKojeKoristeSmjer = grupeRezultat.data.filter(grupa => grupa.smjer === s.sifra);
+                s.mozeSeObrisati = grupeKojeKoristeSmjer.length===0
+            });
+            
+
             setSmjerovi(odgovor.data)
         })
     }
 
+    useEffect(() => {
+        //console.log('Došao na pregled smjerova')
+        ucitajSmjerove()
+    }, [])
+
+
+    async function obrisi(sifra) {
+        if (!confirm('Sigurno obrisati?')) return;
+
+        // Provjeri da li je smjer korišten u grupama
+        const grupeRezultat = await GrupaService.get();
+        const grupeKojeKoristeSmjer = grupeRezultat.data.filter(grupa => grupa.smjer === parseInt(sifra));
+
+        if (grupeKojeKoristeSmjer.length > 0) {
+            alert(`Ne možete obrisati ovaj smjer jer je postavljen na ${grupeKojeKoristeSmjer.length} grupa/e. Prvo obrišite ili promijenite smjer u tim grupama.`);
+            return;
+        }
+
+
+        await SmjerService.obrisi(sifra);
+        await SmjerService.get().then((odgovor) => {
+            setSmjerovi(odgovor.data)
+        })
+    }
+
+
+
+
     return (
         <>
-
-            <Table hover striped bordered>
-                <thead>
-                    <tr>
-                        <th>Naziv</th>
-                        <th>Trajanje</th>
-                        <th>Cijena</th>
-                        <th>Datum pokretanja</th>
-                        <th>Aktivan</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    {smjerovi && smjerovi.map((smjer) => (
-                        <tr key={smjer.sifra}>
-                            <td>{smjer.naziv}</td>
-                            <td>{smjer.trajanje}</td>
-                            <td>{smjer.cijena}</td>
-                            <td>{smjer.datumPokretanja}</td>
-                            {/* <td>{smjer.aktivan ? 'DA' : 'NE'}</td> */}
-
-                            <td>
-                                <GrValidate
-                                    size={25}
-                                    color={smjer.aktivan ? 'green' : 'red'}
-                                    title={smjer.aktivan ? 'Aktivan' : 'Neaktivan'}
-                                />
-
-                                {smjer.aktivan ? (
-                                    <FcApproval />
-                                ) : (
-                                    <FcDisapprove />
-                                )}
-
-
-                            </td>
-
-                        </tr>
-                    ))}
-                </tbody>
-            </Table>
+            <Link to={RouteNames.SMJEROVI_DODAJ}
+            className="btn btn-success w-100 my-3">
+                Dodavanje novog smjera
+            </Link>
+             {['xs', 'sm', 'md'].includes(sirina) ? (
+                        <SmjerPregledGrid
+                            smjerovi={smjerovi}
+                            navigate={navigate}
+                            obrisi={obrisi}
+                        />
+                    ) : (
+                        <SmjerPregledTablica
+                            smjerovi={smjerovi}
+                            navigate={navigate}
+                            obrisi={obrisi}
+                        />
+                    )}
             Ukupno &nbsp;
             <Badge pill bg="success">
-                {smjerovi && smjerovi.length} 
+                {smjerovi && smjerovi.length}
             </Badge>
-            &nbsp; smjerova 
-            
-
+            &nbsp; smjerova
 
             {/* <pre>
                 {JSON.stringify(smjerovi, null, 2)}
-            </pre> */}
+            </pre>  */}
         </>
     )
 }
